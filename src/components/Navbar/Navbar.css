@@ -1,0 +1,278 @@
+/* ─── FLOATING NAVBAR BASE ───────────────────── */
+.navbar {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1200px, 92%);
+  z-index: 100;
+  border-radius: 16px;
+  background: rgba(10, 10, 12, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* عند السكرول */
+.navbar.scrolled {
+  top: 10px;
+  background: rgba(10, 10, 15, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* المنيو مفتوح في الموبايل */
+.navbar.menu-open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: rgba(10, 10, 15, 0.98);
+}
+
+.navbar-inner {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* ─── LOGO ───────────────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.logo-mark {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 14px;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  color: white;
+  flex-shrink: 0;
+}
+
+.logo-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-name {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+.logo-role {
+  font-size: 11px;
+  color: #9ca3af;
+  line-height: 1.3;
+}
+
+/* ─── NAV LINKS ──────────────────────────────── */
+.nav-links {
+  display: flex;
+  gap: 6px;
+}
+
+.nav-link {
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #9ca3af;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-link.active {
+  color: white;
+  background: rgba(124, 58, 237, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(124, 58, 237, 0.25);
+}
+
+/* ─── RIGHT ACTIONS ──────────────────────────── */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  color: #9ca3af;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  color: #06b6d4;
+  border-color: rgba(6, 182, 212, 0.3);
+  background: rgba(6, 182, 212, 0.05);
+}
+
+.resume-btn,
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.resume-btn {
+  color: white;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.resume-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(124, 58, 237, 0.5);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.2);
+}
+
+.contact-btn {
+  color: white;
+  background: #7c3aed;
+  border: 1px solid transparent;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  background: #6d28d9;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.35);
+}
+
+.contact-btn.active {
+  background: #6d28d9;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+}
+
+/* ─── MOBILE TOGGLE ──────────────────────────── */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background 0.2s;
+  line-height: 1;
+}
+
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ─── MOBILE PANEL ───────────────────────────── */
+.mobile-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(10, 10, 15, 0.98);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  overflow: hidden;
+}
+
+.mobile-panel.open {
+  grid-template-rows: 1fr;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-panel-inner {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.mobile-panel.open .mobile-panel-inner {
+  padding: 10px 20px 20px;
+}
+
+.mobile-panel .nav-link {
+  padding: 12px 10px;
+  font-size: 15px;
+  border-radius: 6px;
+}
+
+.mobile-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 10px 0;
+}
+
+.mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.mobile-resume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  background: #7c3aed;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.mobile-resume:hover {
+  background: #6d28d9;
+}
+
+.mobile-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 992px) {
+  .navbar-actions,
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}

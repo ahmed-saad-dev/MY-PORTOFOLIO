@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #050816;
+}
+
+/* ─── SECTION ────────────────────────────────── */
+.skills {
+  min-height: 100vh;
+  padding: 110px 8%;
+  background: #050816;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ─── BLURS ──────────────────────────────────── */
+.top-blur,
+.bottom-blur {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  filter: blur(160px);
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.top-blur {
+  background: #2563eb;
+  top: -150px;
+  left: -150px;
+}
+
+.bottom-blur {
+  background: #7c3aed;
+  right: -150px;
+  bottom: -150px;
+}
+
+/* ─── CONTAINER ──────────────────────────────── */
+.container {
+  max-width: 1250px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── TITLE ──────────────────────────────────── */
+.title {
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.title span {
+  color: #4f7cff;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.title h2 {
+  color: white;
+  font-size: clamp(40px, 6vw, 68px);
+  font-weight: 800;
+  margin-top: 14px;
+  letter-spacing: -2px;
+  line-height: 1.05;
+}
+
+/* ─── GROUP ──────────────────────────────────── */
+.group {
+  margin-bottom: 72px;
+}
+
+.group-head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.group-head h3 {
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+  min-width: max-content;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.14), transparent);
+}
+
+/* ─── GRID ───────────────────────────────────── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 20px;
+}
+
+/* ─── CARD ───────────────────────────────────── */
+.card {
+  position: relative;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.018)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  cursor: default;
+  /* transition handled by framer-motion */
+}
+
+/* hover border — set via JS-injected --clr */
+.card:hover {
+  border-color: var(--clr);
+  /* cross-browser glow without color-mix */
+  box-shadow:
+    0 0 0 1px var(--clr),
+    0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ─── GLOW ───────────────────────────────────── */
+.glow {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background: var(--clr);
+  filter: blur(72px);
+  opacity: 0;
+  border-radius: 50%;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card:hover .glow {
+  opacity: 0.2;
+}
+
+/* ─── ICON ───────────────────────────────────── */
+.icon {
+  width: 78px;
+  height: 78px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: var(--clr);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.35s ease;
+}
+
+.card:hover .icon {
+  transform: scale(1.1) rotate(5deg);
+  border-color: var(--clr);
+}
+
+/* ─── LABEL ──────────────────────────────────── */
+.card p {
+  color: #e5e7eb;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 768px) {
+  .skills {
+    padding: 90px 5%;
+  }
+
+  .title {
+    margin-bottom: 56px;
+  }
+
+  .title h2 {
+    font-size: 38px;
+    letter-spacing: -1px;
+  }
+
+  .group-head h3 {
+    font-size: 22px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+  }
+
+  .card {
+    padding: 22px 14px;
+    border-radius: 20px;
+  }
+
+  .icon {
+    width: 66px;
+    height: 66px;
+    font-size: 30px;
+    border-radius: 16px;
+  }
+}

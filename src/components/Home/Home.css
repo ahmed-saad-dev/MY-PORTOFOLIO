@@ -1,0 +1,354 @@
+/* ─── HOME PAGE ──────────────────────────────── */
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+  overflow: hidden;
+  background: #030303;
+}
+
+/* ─── GLOW ───────────────────────────────────── */
+.absolute-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.glow-1 {
+  top: 10%;
+  left: 5%;
+  background: #7c3aed;
+}
+
+.glow-2 {
+  bottom: 10%;
+  right: 5%;
+  background: #06b6d4;
+}
+
+/* ─── HERO LAYOUT ────────────────────────────── */
+.hero-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  z-index: 2;
+}
+
+/* ─── LEFT ───────────────────────────────────── */
+.home-card {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.home-small-text {
+  color: #7c3aed;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.home-name {
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0 0 12px;
+  letter-spacing: -1px;
+}
+
+.name-accent {
+  background: linear-gradient(135deg, #ffffff 40%, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home-title {
+  font-size: clamp(1.2rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: #9ca3af;
+  margin: 0 0 20px;
+}
+
+.home-bio {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #9ca3af;
+  margin-bottom: 26px;
+  max-width: 580px;
+}
+
+.home-bio strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ─── QUICK TAGS ─────────────────────────────── */
+.quick-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.quick-tags span {
+  padding: 5px 13px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #cbd5e1;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.quick-tags span:hover {
+  border-color: rgba(124, 58, 237, 0.5);
+  color: #a78bfa;
+}
+
+/* ─── BUTTONS ────────────────────────────────── */
+.home-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  height: 46px;
+  box-sizing: border-box;
+}
+
+.btn-icon {
+  font-size: 13px;
+  transition: transform 0.2s ease;
+}
+
+.home-primary {
+  background: #7c3aed;
+  color: white;
+  border: 1px solid transparent;
+}
+
+.home-primary:hover {
+  background: #6d28d9;
+  box-shadow: 0 0 22px rgba(124, 58, 237, 0.4);
+  transform: translateY(-2px);
+}
+
+.home-primary:hover .btn-icon {
+  transform: translateX(4px);
+}
+
+.home-outline {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.home-outline:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.home-outline:hover .btn-icon {
+  transform: translateY(2px);
+}
+
+.social-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #9ca3af;
+  width: 46px;
+  padding: 0;
+}
+
+.social-btn:hover {
+  color: #06b6d4;
+  background: rgba(6, 182, 212, 0.06);
+  border-color: rgba(6, 182, 212, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ─── STATS ──────────────────────────────────── */
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 36px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat h3 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, #9ca3af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.stat span {
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ─── EMAIL ──────────────────────────────────── */
+.home-email {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6b7280;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.email-icon {
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.home-email a {
+  color: #6b7280;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.home-email:hover,
+.home-email:hover a {
+  color: #06b6d4;
+}
+
+/* ─── PROFILE IMAGE ──────────────────────────── */
+.hero-image {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.profile-wrapper {
+  width: 360px;
+  height: 360px;
+  border-radius: 24px;
+  position: relative;
+  background: #0d0d11;
+}
+
+.profile-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -15px;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  filter: blur(35px);
+  z-index: -1;
+  opacity: 0.35;
+  border-radius: 24px;
+  transition: opacity 0.3s ease;
+}
+
+.profile-wrapper:hover::before {
+  opacity: 0.55;
+}
+
+.profile-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: block;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  .home-card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-bio {
+    max-width: 100%;
+  }
+
+  .quick-tags,
+  .hero-stats,
+  .home-buttons {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .profile-wrapper {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page {
+    padding: 100px 20px 60px;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+  }
+
+  .home-btn {
+    width: 100%;
+  }
+
+  .social-btn {
+    width: 100%;
+    height: 46px;
+  }
+
+  .hero-stats {
+    gap: 28px;
+  }
+}
