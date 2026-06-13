@@ -20,7 +20,7 @@ const ScrollToTop = () => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "instant", // ممكن تخليه "smooth" لو عايز أنيميشن
+      behavior: "instant", 
     });
   }, [pathname]);
 
@@ -65,7 +65,17 @@ const PageLoader = () => (
 
 function App() {
   return (
-    <>
+    // 🛡️ الحاوية الخارجية الكبرى: إجبار السواد التام على الشاشة كلها من الحافة للحافة
+    <div 
+      style={{ 
+        width: "100%", 
+        minHeight: "100vh", 
+        backgroundColor: "#030303", 
+        margin: 0, 
+        padding: 0,
+        overflowX: "hidden"
+      }}
+    >
       {/* Scroll reset */}
       <ScrollToTop />
 
@@ -78,6 +88,8 @@ function App() {
           width: "100%",
           maxWidth: "100vw",
           overflow: "hidden",
+          backgroundColor: "#030303", // ⬅️ تأمين خلفية الـ main بنفس السواد
+          margin: "0 auto",
         }}
       >
         <Suspense fallback={<PageLoader />}>
@@ -92,7 +104,7 @@ function App() {
           </Routes>
         </Suspense>
       </main>
-    </>
+    </div>
   );
 }
 

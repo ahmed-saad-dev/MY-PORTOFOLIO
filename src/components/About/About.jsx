@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import "./About.css";
 
+
 const About = () => {
   const sectionRef = useRef(null);
 

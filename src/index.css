@@ -16,7 +16,7 @@ body,
   max-width: 100vw !important;
   overflow-x: hidden !important;
   position: relative;
-  background-color: #030303; /* لون الخلفية الأساسي للموقع */
+  background-color: #030303 !important; /* لون الخلفية الأساسي للموقع برة وجوة */
   color: #f4f4f5;
   font-family: 'Plus Jakarta Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -30,15 +30,25 @@ html {
 
 /* ─── CSS GLOBAL VARIABLES ────────────────────── */
 :root {
+  /* الألوان الأساسية */
   --bg: #030303;
   --surface: #0a0a0c;
   --border: rgba(255, 255, 255, 0.06);
   --text: #f4f4f5;
+  --text-h: #ffffff; /* اللون الأبيض الصريح للعناوين والـ Hovers */
   --muted: #9ca3af;
+  
+  /* ألوان الأكشن والـ Accents */
   --accent: #7c3aed; /* البنفسجي الأساسي */
   --cyan: #06b6d4;   /* السيان المساعد */
   --green: #4ade80;
   --radius: 12px;
+
+  /* المتغيرات المستنتجة لتشغيل الـ Counter والـ Components الأخرى بسلاسة */
+  --accent-bg: rgba(124, 58, 237, 0.1);       /* خلفية شفافة خفيفة للـ Badges */
+  --accent-border: rgba(124, 58, 237, 0.4);   /* بوردر الهوفر البنفسجي */
+  --social-bg: rgba(255, 255, 255, 0.02);     /* خلفية أزرار السوشيال والروابط */
+  --shadow: 0 4px 20px rgba(124, 58, 237, 0.15); /* ظل ناعم بنفسجي عند الهوفر */
 }
 
 /* ─── BASE ELEMENTS STYLE ────────────────────── */
@@ -81,7 +91,7 @@ img {
   background: var(--accent); /* يقلب بنفسجي عند الهوفر */
 }
 
-/* ─── UTILITIES (اختياري لمساعدتك في الشغل) ─── */
+/* ─── UTILITIES ──────────────────────────────── */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -93,4 +103,5 @@ img {
   background: linear-gradient(135deg, #ffffff 40%, var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text; /* تأمين التوافق مع المتصفحات القديمة */
 }
