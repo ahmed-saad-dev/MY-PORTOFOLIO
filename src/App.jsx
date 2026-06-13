@@ -1,26 +1,96 @@
-import { Routes, Route } from "react-router-dom";
+import React, { lazy, Suspense, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
+// Navbar ثابت (Eager Loading)
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Skills from "./components/Skills/Skills";
-import Contact from "./components/Contact/Contact";
 
+// Lazy Loading للصفحات
+const Home = lazy(() => import("./components/Home/Home"));
+const About = lazy(() => import("./components/About/About"));
+const Skills = lazy(() => import("./components/Skills/Skills"));
+const Contact = lazy(() => import("./components/Contact/Contact"));
+
+/**
+ * Scroll To Top Component
+ */
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant", // ممكن تخليه "smooth" لو عايز أنيميشن
+    });
+  }, [pathname]);
+
+  return null;
+};
+
+/**
+ * Loader Component
+ */
+const PageLoader = () => (
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      minHeight: "80vh",
+      backgroundColor: "#030303",
+      flexDirection: "column",
+      gap: "12px",
+    }}
+  >
+    <div
+      style={{
+        width: "40px",
+        height: "40px",
+        border: "3px solid rgba(124, 58, 237, 0.15)",
+        borderTopColor: "#7c3aed",
+        borderRadius: "50%",
+        animation: "spin 0.8s linear infinite",
+      }}
+    />
+
+    <style>{`
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    `}</style>
+  </div>
+);
 
 function App() {
   return (
     <>
+      {/* Scroll reset */}
+      <ScrollToTop />
+
+      {/* Navbar ثابت */}
       <Navbar />
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/contact" element={<Contact />} />
+      {/* Main content */}
+      <main
+        style={{
+          width: "100%",
+          maxWidth: "100vw",
+          overflow: "hidden",
+        }}
+      >
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/contact" element={<Contact />} />
 
-         
-        </Routes>
+            {/* أي Route غلط يرجع Home */}
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </Suspense>
       </main>
     </>
   );
