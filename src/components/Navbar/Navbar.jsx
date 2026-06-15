@@ -70,7 +70,7 @@ const Navbar = () => {
   <FaGithub />
 </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+           href="https://www.linkedin.com/in/ahmed-saad-598372369"
             target="_blank"
             rel="noreferrer"
             className="social-link"
@@ -132,7 +132,7 @@ const Navbar = () => {
                 <FaGithub />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/ahmed-saad-598372369"
                 target="_blank"
                 rel="noreferrer"
                 className="social-link"
