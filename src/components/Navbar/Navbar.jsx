@@ -61,7 +61,7 @@ const Navbar = () => {
         {/* RIGHT SIDE (Desktop) */}
         <div className="navbar-actions">
          <a
-  href="https://github.com/ahmed-saad-dev"
+   href="https://github.com/ahmed-saad-dev/AHMED-SAAD.git"
   target="_blank"
   rel="noreferrer"
   className="social-link"
