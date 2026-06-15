@@ -123,7 +123,7 @@ const Navbar = () => {
             </a>
             <div className="mobile-socials">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/ahmed-saad-dev/AHMED-SAAD.git"
                 target="_blank"
                 rel="noreferrer"
                 className="social-link"

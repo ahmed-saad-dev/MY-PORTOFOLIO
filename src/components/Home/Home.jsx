@@ -63,7 +63,7 @@ const Home = () => {
               Download CV
             </a>
             <a
-              href="https://github.com/ahmed-saad-dev"
+              href="https://github.com/ahmed-saad-dev/AHMED-SAAD.git"
               target="_blank"
               rel="noreferrer"
               className="home-btn social-btn"
