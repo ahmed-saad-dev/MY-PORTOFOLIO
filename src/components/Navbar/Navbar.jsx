@@ -79,7 +79,7 @@ const Navbar = () => {
             <FaLinkedin />
           </a>
           <a
-            href="/Ahmed-Saad-CV.pdf"
+            href="/Ahmed-Saad1-CV.pdf"
             target="_blank"
             rel="noreferrer"
             className="resume-btn"

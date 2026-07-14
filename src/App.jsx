@@ -9,6 +9,7 @@ const Home = lazy(() => import("./components/Home/Home"));
 const About = lazy(() => import("./components/About/About"));
 const Skills = lazy(() => import("./components/Skills/Skills"));
 const Contact = lazy(() => import("./components/Contact/Contact"));
+const Projects = lazy(() => import("./components/Projects/Projects"));
 
 /**
  * Scroll To Top Component
@@ -98,6 +99,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/projects" element={<Projects />} />
 
             {/* أي Route غلط يرجع Home */}
             <Route path="*" element={<Home />} />

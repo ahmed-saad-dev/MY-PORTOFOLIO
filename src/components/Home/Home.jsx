@@ -54,7 +54,8 @@ const Home = () => {
               <FaArrowRight className="btn-icon" />
             </Link>
             <a
-              href="/Ahmed-Saad-CV.pdf"
+              href="/Ahmed-Saad1-CV.pdf"
+              
               target="_blank"
               rel="noreferrer"
               className="home-btn home-outline"
